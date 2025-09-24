@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{
+  --bg: #F7F2EC; /* cream-50 */
+  --fg: #1E2A25; /* ink */
+}
+
+html, body {
+  color: var(--fg);
+  background: var(--bg);
+}
+
+.container-pad {
+  @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+.prose-narrow {
+  @apply max-w-prose;
+}

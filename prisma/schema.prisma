@@ -1,0 +1,135 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+model Plant {
+  id           String     @id @default(cuid())
+  slug         String     @unique
+  name         String
+  latinName    String?
+  safety       Safety
+  light        Light
+  watering     String
+  difficulty   Difficulty
+  petNotes     String?
+  tags         PlantTag[]
+  contentMdx   String
+  createdAt    DateTime   @default(now())
+  updatedAt    DateTime   @updatedAt
+}
+
+model PlantTag {
+  id      String @id @default(cuid())
+  name    String
+  plantId String
+  plant   Plant  @relation(fields: [plantId], references: [id])
+
+  @@unique([name, plantId])
+}
+
+enum Safety {
+  SAFE
+  CAUTION
+  TOXIC
+}
+
+enum Light {
+  SHADE
+  INDIRECT
+  BRIGHT
+}
+
+enum Difficulty {
+  EASY
+  MEDIUM
+  ADVANCED
+}
+
+model Guide {
+  id         String   @id @default(cuid())
+  slug       String   @unique
+  title      String
+  summary    String?
+  contentMdx String
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+}
+
+model Ritual {
+  id         String       @id @default(cuid())
+  slug       String       @unique
+  title      String
+  timeOfDay  String
+  steps      RitualStep[]
+  breath     String?
+  mediaUrl   String?
+  contentMdx String
+  createdAt  DateTime     @default(now())
+  updatedAt  DateTime     @updatedAt
+}
+
+model RitualStep {
+  id       String @id @default(cuid())
+  text     String
+  order    Int
+  ritualId String
+  ritual   Ritual @relation(fields: [ritualId], references: [id])
+}
+
+// Shop
+model Product {
+  id          String         @id @default(cuid())
+  slug        String         @unique
+  title       String
+  summary     String?
+  description String?
+  category    String
+  collection  String?
+  technique   String?
+  images      ProductImage[]
+  variants    Variant[]
+  createdAt   DateTime       @default(now())
+  updatedAt   DateTime       @updatedAt
+}
+
+model ProductImage {
+  id        String  @id @default(cuid())
+  url       String
+  productId String
+  product   Product @relation(fields: [productId], references: [id])
+}
+
+model Variant {
+  id        String  @id @default(cuid())
+  productId String
+  sku       String  @unique
+  color     String
+  size      String?
+  priceCzk  Int
+  stock     Int
+  Product   Product @relation(fields: [productId], references: [id])
+}
+
+model Order {
+  id        String   @id @default(cuid())
+  email     String
+  items     Json
+  amountCzk Int
+  stripeId  String?
+  status    String
+  createdAt DateTime @default(now())
+}
+
+model CartSnapshot {
+  id        String   @id @default(cuid())
+  data      Json
+  createdAt DateTime @default(now())
+}
