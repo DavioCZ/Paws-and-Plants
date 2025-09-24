@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Link from "next/link";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "Paws & Plants",
@@ -13,7 +14,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="min-h-screen flex flex-col">
         <header className="border-b border-black/5 bg-cream sticky top-0 z-50">
           <nav className="container-pad h-14 flex items-center justify-between">
-            <Link href="/" className="font-semibold tracking-wide">
+            <Link href="/" className="flex items-center gap-2 font-semibold tracking-wide">
+              <Image src="/logo.png" alt="Paws & Plants logo" width={32} height={32} className="rounded-full" />
               Paws & Plants
             </Link>
             <div className="flex gap-4 text-sm">
