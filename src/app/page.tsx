@@ -17,13 +17,13 @@ export default function Page() {
       </AnimatedInView>
 
       <AnimatedInView delay={0.05}>
-        <h1 className="mt-6 text-4xl sm:text-5xl font-semibold tracking-tight text-ink">
+        <h1 className="mt-6 text-4xl sm:text-5xl lg:text-6xl font-semibold text-ink drop-shadow-[0_1px_0_rgba(255,255,255,.75)]">
           Pokojovky, psi a ticho pro hlavu.
         </h1>
       </AnimatedInView>
 
       <AnimatedInView delay={0.1}>
-        <p className="mt-4 text-muted max-w-prose">
+        <p className="mt-4 bg-white/70 backdrop-blur-sm ring-1 ring-black/5 rounded-xl px-3 py-2 text-ink max-w-prose">
           Pet-friendly tipy, jednoduchá péče a malé rituály. Žádný křik, žádné zbytečné komplikace.
         </p>
       </AnimatedInView>
