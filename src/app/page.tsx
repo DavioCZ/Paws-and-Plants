@@ -12,6 +12,10 @@ export default function Page() {
         Pokojovky, psi a ticho pro hlavu.
       </h1>
 
+      <div className="debug-badge">
+        Tailwind OK
+      </div>
+
       <p className="mt-4 text-black/70 prose-narrow">
         Pet-friendly tipy, jednoduchá péče a malé rituály. Žádný křik, žádné
         zbytečné komplikace.

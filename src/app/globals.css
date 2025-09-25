@@ -2,23 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Theme tokens */
-:root {
-  --bg: #F7F2EC; /* cream50 */
-  --fg: #1E2A25; /* ink */
-}
+/* quick theming */
+:root { color: #1E2A25; background: #F7F2EC; }
+a { text-decoration: underline; text-underline-offset: 4px; }
 
-html, body {
-  color: var(--fg);
-  background: var(--bg);
-}
-
-/* Helpers */
+/* helpers (musí se vygenerovat Tailwindem) */
 .container-pad { @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8; }
 .prose-narrow { @apply max-w-prose; }
 
-/* Simple links & buttons */
-a { @apply underline decoration-sage/30 underline-offset-4 hover:decoration-sage; }
-.btn { @apply inline-flex items-center justify-center rounded-xl px-4 py-2 text-sm font-medium; }
-.btn-primary { @apply bg-sage text-white hover:bg-sage600; }
-.btn-ghost { @apply border border-black/10 hover:border-black/20; }
+/* DEBUG badge aby bylo jasné, že utility vznikají */
+.debug-badge { @apply inline-block rounded-xl bg-sage text-white px-3 py-1; }
