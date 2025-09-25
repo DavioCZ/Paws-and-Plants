@@ -2,6 +2,9 @@ import Link from "next/link";
 import { Card } from "../components/Card";
 import AnimatedInView from "../components/AnimatedInView";
 import { Badge } from "../components/Badge";
+import PlantQuickSearch from "../components/PlantQuickSearch";
+import ThisWeek from "../components/ThisWeek";
+import SafetyLegend from "../components/SafetyLegend";
 
 export default function Page() {
   return (
@@ -24,6 +27,12 @@ export default function Page() {
           Pet-friendly tipy, jednoduchá péče a malé rituály. Žádný křik, žádné zbytečné komplikace.
         </p>
       </AnimatedInView>
+
+      <PlantQuickSearch />
+
+      <ThisWeek />
+
+      <SafetyLegend />
 
       <AnimatedInView delay={0.15}>
         <div className="mt-8 flex flex-wrap gap-3">
