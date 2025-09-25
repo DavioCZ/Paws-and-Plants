@@ -82,7 +82,7 @@ Dobře, ať z toho není další žonglování s pětadvaceti míčky. Tady má�
 
 ## FÁZE 4 — hero scrim (lokální, ne globální mléko)
 
-* [ ] **Scrim pod textem**
+* [x] **Scrim pod textem**
 
   * Soubor: `src/app/page.tsx`
   * Přidej nad hero obsah:
