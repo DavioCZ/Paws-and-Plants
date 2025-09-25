@@ -2,25 +2,25 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import CalmProvider from "../components/CalmProvider";
+import BackgroundVideo from "../components/BackgroundVideo"; // Import the new component
 
 export const metadata: Metadata = {
   title: "Paws & Plants",
-  description: "Pokojovky, psi a ticho pro hlavu.",
-  openGraph: { title:"Paws & Plants", description:"Pokojovky, psi a ticho pro hlavu.", images:["/brand/png/pp-og-1200x630.jpg"] },
+  description: "Your one-stop shop for pet-safe plants and expert care advice.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="cs" className="scroll-smooth">
-      <body className="min-h-screen flex flex-col antialiased [font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,'Apple Color Emoji','Segoe UI Emoji']">
-        <CalmProvider>
-          <Header />
-          <main className="flex-1">{children}</main>
-          <Footer />
-        </CalmProvider>
-      {/* Plausible */}
-      <script defer data-domain="tvoje-domena.cz" src="https://plausible.io/js/script.js" />
+      <body className="min-h-screen flex flex-col antialiased">
+        <Header />
+        <BackgroundVideo /> {/* ← tady, jedno jediné místo */}
+
+        <main id="content" className="relative z-10 flex-1">
+          {children}
+        </main>
+
+        <Footer />
       </body>
     </html>
   );

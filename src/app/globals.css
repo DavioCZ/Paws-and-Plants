@@ -10,7 +10,15 @@
 }
 
 /* pár globálů, ať hned vidíš změnu */
-:root { color: var(--color-ink); background: var(--color-cream); }
+:root {
+  --cream: #f5efe7;
+  --sage: #2e7d6b;
+  --ink: #1f312a;
+  color: var(--ink);
+  background: var(--cream);
+}
+.bg-cream { background: var(--cream); }
+.text-ink { color: var(--ink); }
 /* Link styl – decentně */
 a { text-decoration: underline; text-underline-offset: 4px; }
 a:hover { text-decoration-color: oklch(0.75 0.05 155); }
@@ -23,7 +31,3 @@ a:hover { text-decoration-color: oklch(0.75 0.05 155); }
 /* helpery */
 .container-pad { @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8; }
 .prose-narrow { @apply max-w-prose; }
-
-/* když je calm, mírnější stíny a vypnout motion */
-:root[data-calm="true"] * { animation: none !important; transition: none !important; }
-:root[data-calm="true"] .shadow-soft { box-shadow: 0 4px 12px rgba(0,0,0,0.04); }
