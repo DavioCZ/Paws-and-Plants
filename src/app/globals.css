@@ -11,7 +11,14 @@
 
 /* pár globálů, ať hned vidíš změnu */
 :root { color: var(--color-ink); background: var(--color-cream); }
-a { text-underline-offset: 4px; }
+/* Link styl – decentně */
+a { text-decoration: underline; text-underline-offset: 4px; }
+a:hover { text-decoration-color: oklch(0.75 0.05 155); }
+
+/* Malé utility, ať nekopíruješ pořád to samé */
+.btn { @apply inline-flex items-center justify-center rounded-xl px-4 py-2 text-sm font-medium; }
+.btn-primary { @apply bg-sage text-white hover:brightness-95; }
+.btn-ghost { @apply border border-black/10 hover:border-black/20; }
 
 /* helpery */
 .container-pad { @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8; }
