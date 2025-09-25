@@ -1,14 +1,18 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-/* quick theming */
-:root { color: #1E2A25; background: #F7F2EC; }
-a { text-decoration: underline; text-underline-offset: 4px; }
+/* CSS-first téma v Tailwind v4 */
+@theme {
+  --color-ink: #1E2A25;
+  --color-sage: #2E7D6B;
+  --color-sage-600: #2F6E5D;
+  --color-blush: #F3B7C4;
+  --color-cream: #F7F2EC;
+}
 
-/* helpers (musí se vygenerovat Tailwindem) */
+/* pár globálů, ať hned vidíš změnu */
+:root { color: var(--color-ink); background: var(--color-cream); }
+a { text-underline-offset: 4px; }
+
+/* helpery */
 .container-pad { @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8; }
 .prose-narrow { @apply max-w-prose; }
-
-/* DEBUG badge aby bylo jasné, že utility vznikají */
-.debug-badge { @apply inline-block rounded-xl bg-sage text-white px-3 py-1; }
