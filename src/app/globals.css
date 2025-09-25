@@ -11,11 +11,13 @@
 
 /* pár globálů, ať hned vidíš změnu */
 :root {
-  --cream: #f5efe7;
-  --sage: #2e7d6b;
-  --ink: #1f312a;
+  --brand-spruce:#2F5E45; --brand-sage:#8DBF75; --brand-cream:#F7F4EE;
+  --brand-sand:#EADBC8; --brand-clay:#B47C5C; --brand-chestnut:#8D5F47;
+  --color-bg:var(--brand-cream); --color-surface:#FFFEFB; --color-ink:#1F312A;
+  --color-muted:#5E7067; --color-border:rgba(0,0,0,.08);
+  --color-ring:color-mix(in oklab, var(--brand-sage) 30%, transparent);
   color: var(--ink);
-  background: var(--cream);
+  background: var(--color-bg);
 }
 .bg-cream { background: var(--cream); }
 .text-ink { color: var(--ink); }
